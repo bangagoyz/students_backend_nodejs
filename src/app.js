@@ -4,11 +4,13 @@ const userRoutes = require("./modules/users/user_routes");
 const authRoutes = require("./modules/auth/auth_routes");
 const studentRoutes = require("./modules/student/student_routes");
 const app = express();
+const setupSwagger = require("./config/swagger");
 
 require("./modules/users/user_model");
 sequelize.sync();
 
 app.use(express.json());
+setupSwagger(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "API Running" });
