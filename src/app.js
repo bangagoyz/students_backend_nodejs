@@ -2,6 +2,7 @@ const express = require("express");
 const sequelize = require("./config/database");
 const userRoutes = require("./modules/users/user_routes");
 const authRoutes = require("./modules/auth/auth_routes");
+const studentRoutes = require("./modules/student/student_routes");
 const app = express();
 
 require("./modules/users/user_model");
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 app.use("/api/users", userRoutes);
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/student", studentRoutes);
 
 sequelize
   .authenticate()
