@@ -1,5 +1,8 @@
 const express = require("express");
 const sequelize = require("./config/database");
+require("./modules/user_model");
+
+sequelize.sync();
 
 const app = express();
 
