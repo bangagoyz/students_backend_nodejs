@@ -40,6 +40,8 @@ router.use(verifyToken);
  *         description: List of students matching query
  *       401:
  *         description: Unauthorized
+ *       404:
+ *         description: No students found matching the query
  */
 router.get("/", controller.search);
 

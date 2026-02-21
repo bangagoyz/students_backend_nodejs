@@ -25,6 +25,12 @@ exports.search = async (req, res) => {
       result = await studentService.searchBy("YMD", ymd);
     }
 
+    if (result.length === 0) {
+      return res.status(404).json({
+        message: "No students found matching the query",
+      });
+    }
+
     res.json(result);
   } catch (error) {
     res.status(500).json({

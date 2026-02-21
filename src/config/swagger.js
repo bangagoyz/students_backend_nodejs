@@ -7,7 +7,8 @@ const options = {
     info: {
       title: "Students Backend API",
       version: "1.0.0",
-      description: "Take Home Test API - Student Search. plesase",
+      description:
+        "Take Home Test API - Student Search. please create new user first, then login to get token for searching students",
     },
     servers: [
       {
